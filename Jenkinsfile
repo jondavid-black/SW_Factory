@@ -10,11 +10,9 @@ pipeline {
 
     parameters {
         choice(
-            choice(
-                choices: ['1', '2', '3'],
-                description: 'Choose the server number to build.',
-                name: 'SVR_NUM'
-            )
+            choices: ['1', '2', '3'],
+            description: 'Choose the server number to build.',
+            name: 'SVR_NUM'
         )
     }
 
