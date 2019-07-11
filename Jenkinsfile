@@ -37,6 +37,10 @@ pipeline {
                 sh 'dd bs=4M if=./images/raspbian-stretch-lite/2019-04-08-raspbian-stretch-lite.img of=/dev/sdc conv=fsync'
             }
         }
+
+        /*
+        On Ubuntu MATE 18.04 where I'm running my Jenkins server, he partitions auto-mount when dd competes...so skip this.
+        
         stage('Mount SD Card') {
             steps {
                 sh 'mkdir -p /media/sw_factory/boot'
@@ -46,6 +50,8 @@ pipeline {
                 sh 'mount /dev/sdc2 /media/sw_factory/rootfs'
             }
         }
+        */
+
         stage('Write Bridge Network Config') {
             when {
                 // Only write raspbian bridge config for svr 3
