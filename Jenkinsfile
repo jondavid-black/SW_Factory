@@ -53,12 +53,12 @@ pipeline {
             }
             steps {
                 // This is another hack to allow me to post to GitHub and still protect wifi password confidentiallity.
-                sh 'cp /home/jd/Documents/DevOps/demo/SW_Factory/config/rpi1/wpa_supplicant.dat ./config/rpi1/wpa_supplicant.dat'
+                sh 'cp /home/jd/Documents/DevOps/demo/SW_Factory/config/rpi1/wpa_supplicant.conf_secret ./config/rpi1/wpa_supplicant.conf'
 
                 // enable SSH on boot
                 sh 'touch /media/sw_factory/boot/ssh'
                 // setup wifi interface for DHCP on specific SSIDs
-                sh 'cp ./config/rpi1/wpa_supplicant.dat /media/sw_factory/boot/wpa_supplicant.dat'
+                sh 'cp ./config/rpi1/wpa_supplicant.conf /media/sw_factory/boot/wpa_supplicant.conf'
                 // setup /etc/network/interfaces for static IP on eth0
                 sh 'cp ./config/rpi1/dhcpcd.conf /media/sw_factory/rootfs/etc/dhcpcd.conf'
             }
