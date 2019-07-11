@@ -1,0 +1,7 @@
+/images/centos-server/
+/images/raspbian-stretch-lite/
+/images/ubuntu-server/
+/images/atomic-pi-ubuntu-bare/
+Jenkinsfile_slow_yo_roll
+/config/rpi1/wpa_supplicant.conf_secret
+hardware.md
